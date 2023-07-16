@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width">
     <title>Function scope example</title>
   </head>
+  <style>
+    body{
+      background-color: rgb(150, 150, 150);
+    }
+  </style>
 <body>
 <h1 style="font-size: 5rem; text-align: center;">Hello </h1>
   <script>
@@ -25,6 +30,49 @@
       document.body.appendChild(para);
       para.textContent = `Your Value is: ${value}`;
     }
+
+
+    //  Assignment for hands on practice of function in javascript
+
+    // Assignment 1 => Write a function called add7 that takes one number and returns that number + 7.
+
+     function add7(num){
+      return num+7;
+     }
+     console.log(add7(12));
+
+    //  Assignment 2 => Write a function called multiply that takes 2 numbers and returns their product.
+
+    function multipy(num1,num2){
+      return num1*num2;
+    }
+    console.log(multipy(1,12));
+
+    //  Assignment 3 => Write a function called capitalize that takes a string and returns that string with only the first letter capitalized. Make sure that it can take strings that 
+    //  are lowercase, UPPERCASE or BoTh.
+
+    function capitaize(sentence){
+      let firstLetter = sentence.slice(0,1);
+      let capitalizedLetter= firstLetter.toUpperCase();
+      let lowerSentence = sentence.toLowerCase();
+      let finalSentence = lowerSentence.replace(firstLetter,capitalizedLetter);
+      return finalSentence;
+    }
+    let mySentence = "hello hoW aRe yOU? WE arE doiNg GOoD";
+    let modifiedSentence = capitaize(mySentence);
+    console.log(modifiedSentence);
+
+    //  Assignment 4 => Write a function called lastLetter that takes a string and returns the very last letter of that string:
+    //  lastLetter("abcd") should return "d"
+
+    function lastLetter(sentence){
+      let lastletter = sentence.charAt(sentence.length-1);
+      return lastletter;
+    }
+
+    let mySentence1 = "hello hoW aRe yOU? WE arE doiNg GOoD";
+    console.log(lastLetter(mySentence1));
+    
   </script>
 </body>
 </html>
