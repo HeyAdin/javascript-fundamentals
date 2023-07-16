@@ -8,51 +8,162 @@
 </head>
 
 <body>
-    Try the following exercises (and don’t forget to use console.log()!):
+    <!-- Fundamentals Part  2 -->
 
-    Add 2 numbers together! (just type console.log(23 + 97) into your html file)
-    Add a sequence of 6 different numbers together.
-    Print the solution to the following equation: (4 + 6 + 9) / 77
-    Answer should be approximately 0.24675
-    Let’s use variables!
-    Type this statement at the top of the script tag: let a = 10
-    In the console console.log(a) should print 10
-    Try the following in the console: 9 * a
-    and this: let b = 7 * a (returns undefined *) and then console.log(b)
-    You should be getting the hang of this by now… try this sequence:
-
-
-    Declare a constant variable max with the value 57
-    Set another variable actual to max - 13
-
-    Set another variable percentage to actual / max
-
-    If you type percentage in the console and press Enter you should see a value like 0.7719
-
-    Take a few minutes to keep playing around with various things in your script tag. Eventually, we will learn how to
-    actually make those numbers and things show up on the webpage, but all of this logic will remain the same, so make
-    sure you’re comfortable with it before moving on.
-    
-    * As you might have noticed by running Javascript code in the console, the console prints the result of the code it
-    executes (called a return statement). You will learn more about these in the next lessons, however for now it is
-    good to remember that a declaration with an assignment (such as let b = 7 * a) returns undefined and so you cannot
-    declare and assign a value to a variable and read its value in the same line.
 </body>
 <script>
-    let a =10;
-    console.log("a =" + a);
-    a*=9;
-    let b = 7*a;
-    const MAX = 57;
-    let actual = MAX-13;
-    let percentage = actual/MAX;
-    console.log("b = " + b);
-    console.log("Adding two number 23+63");
-    console.log(23 + 63);
-    console.log("Add a sequence of 6 different numbers together  12+16+25+4+56+12");
-    console.log(12+16+25+4+56+12);
-    console.log("Print the solution to the following equation: (4 + 6 + 9) / 77");
-    console.log((4 + 6 + 9) / 77);
+    // Fundamentals Part 2 
+    const string = "The revolution will not be televised.";
+    console.log(string);
+    const badString = string;
+    console.log(badString);
+
+    // const bigmouth = 'I've got no right to take my place…'; This will throw an error.. 
+
+    const bigmouth = 'I\'ve got no right to take my place… ';  // By using backslash we can escape the error
+    console.log(bigmouth);
+
+    // COncatenation of Strings 
+    // const greeting = `Hello`;
+
+    const name1 = "Chris";
+    const greeting = `Hello, ${name1}`;
+    console.log(greeting); // "Hello, Chris"
+
+    //  Another Example 
+
+    const one = "Hello, ";
+    const two = "how are you?";
+    const joined = `${one}${two}`;
+    console.log(joined); // "Hello, how are you?"
+
+    // What happens when I will try to concatenate number and a string
+
+    const name = "Front ";
+    const number = 242;
+    console.log(`${name}${number}`); // "Front 242"
+
+    // COnverting String to number
+    const myString = "123";
+    const myNum = Number(myString);  // Or +(myString)  Unary Operator
+    console.log(typeof myNum);
+
+    // COnverting Number to String 
+
+    const myNum2 = 123;
+    const myString2 = myNum2.toString();
+    console.log(typeof myString2);
+
+    // Multiline 
+
+    // Template literal respects line break 
+    let output = `I like the song.
+I gave it a score of 90%.`;
+    console.log(output);
+
+    /*
+    I like the song.
+    I gave it a score of 90%.
+    */
+
+    // \n also do the same thing just put the \n where you want line break..
+    output = "I like the song.\nI gave it a score of 90%.";
+    console.log(output);
+
+    /*
+    I like the song.
+    I gave it a score of 90%.
+    */
+
+    // String Methods 
+
+    let browserType = "mozilla";
+    browserType.length;  // this will give number of characters in this strings including whitespaces.
+
+    browserType.charAt(3);
+    browserType[3];  // both will give same result
+
+    if (browserType.includes("zill")) {
+        console.log("found zill here");
+    }
+    else {
+        console.log("zill is not here");
+    }
+
+    // endswith and startswith
+
+    if (browserType.endsWith("lla")) {
+        console.log("yes");
+    }
+    else {
+        console, log("No");
+    }
+
+    if (browserType.startsWith("mo")) {
+        console.log("yes it starts with");
+    }
+    else {
+        console.log("no its not");
+    }
+
+
+    //  Finding Substring index
+
+    const tagline = "MDN - Resources for developers, by developers";
+    let firstOccurrance = tagline.indexOf("developers");
+    console.log(firstOccurrance); // 20
+
+
+    //  2nd occurrance 
+
+    console.log("2nd occurrance " + tagline.indexOf("developers", firstOccurrance + 1));
+
+    // Extracting a substring from a string
+
+    browserType = "mozilla";
+    console.log(browserType.slice(1, 4)); // "ozi"
+
+    // starts from this till the end then dont include 2nd parameter
+
+    console.log(browserType.slice(1)); // "zilla"
+
+    // Negative value in the parameter will start counting from the back...
+
+    // Changing case  (toUpperC ase,toLowerCase)
+
+    const radData = "My NaMe Is MuD";
+    console.log(radData.toLowerCase());
+    console.log(radData.toUpperCase());
+
+    // Updating parts of a string (Replacing a part of string)
+
+    browserType = "mozilla";
+    const updated = browserType.replace("moz", "van");
+
+    console.log(updated); // "vanilla"
+    console.log(browserType); // "mozilla"
+
+    // ABove code will replace only first occurrance in order to change all occurrences, we need to do like 
+    let quote = "To be or not to be";
+    quote = quote.replaceAll("be", "code");
+
+    console.log(quote); // "To code or not to code"
+
+
+    const quotes = 'I do not like green eggs and ham. I do not like them, Sam-I-Am.';
+    const substring = 'green eggs and ham';
+
+    // Add your code here
+    let quoteLength = quotes.length;
+    let index = quotes.indexOf("green eggs and ham");
+    let revisedQuotes = quotes.slice(0, quoteLength.length);
+
+    let lower = quotes.toLowerCase();
+    let firstLetter = quotes.slice(0, 1);
+    let fixedQuote = lower.replace(quotes[0], firstLetter);
+    fixedQuote = fixedQuote.replace("green eggs and ham", "beans and beef");
+    let finalQuote = `${fixedQuote}`;
+    console.log(finalQuote);
 
 
 </script>
