@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rock Paper Scissor</title>
+</head>
+
+<body>
+
+</body>
+<script>
+    let userScore = 0;
+    let computerScore = 0;
+    console.log(game() + "\n Computer Score : "+ computerScore +"\n User Score : " + userScore);
+    // This Function gives the output of 5 rounds game
+    function game() {
+        for (let i = 0; i < 5; i++) {
+            const computer = computerChoice();
+            const user = userChoice();
+            playRound(user,computer);
+            if(user==null){
+                return alert("User do not want to play");
+            }
+        }
+        if(userScore==computerScore){
+            return "Draw ! Press F5 or Reload the game";
+        }
+        else if(userScore>computerScore){
+            return "Woooohhooooo! You Won";
+        }
+        else{
+            return "Oops Better Luck Next Time ";
+        }
+    }
+
+    //  This Function is for playing
+    function playRound(computer, user) {
+        if(user == null){
+            return alert("User dont want to play");
+        }
+        if (computer == user) {
+            return "Draw ! Press F5 or Reload to Play Agin ";
+        }
+        else if (computer == "Rock" && user == "Paper") {
+            userScore++;
+        }
+        else if (computer == "Rock" && user == "Scissors") {
+            computerScore++;
+        }
+        else if (computer == "Paper" && user == "Rock") {
+            computerScore++;
+        }
+        else if (computer == "Paper" && user == "Scissors") {
+            userScore++;
+        }
+        else if (computer == "Scissors" && user == "Rock") {
+            userScore++;
+        }
+        else if (computer == "Scissors" && user == "Paper") {
+            computerScore++;
+        }
+    }
+
+    //  This function gives User's choice
+    function userChoice() {
+        const choices = prompt("Choose Rock Paper or Scissors");
+        if(choices == null || choices== undefined || choices == NaN || choices == ""){
+            return null;
+        }
+        const choice = choices.toLowerCase();
+        if (choice == "rock") {
+            return "Rock";
+        }
+        else if (choice == "paper") {
+            return "Paper";
+        }
+        if (choice == "scissors") {
+            return "Scissors";
+        }
+    }
+    //  This Function gives Computer's choice
+    function computerChoice() {
+        choice = Math.random();
+        if (choice < 0.33333) {
+            return "Rock";
+        }
+        else if (choice < 0.6666) {
+            return "Paper";
+        }
+        else if (choice < 1) {
+            return "Scissors";
+        }
+    }
+</script>
+
+</html>
