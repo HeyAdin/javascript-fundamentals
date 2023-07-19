@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arrays and Loops</title>
+</head>
+
+<body>
+
+</body>
+<Script>
+    //  Arrays
+    // Direct initialization and declaration in single line
+    const car = ["BMW", "Range Rover", "Volvo"];
+
+    // Initialisation
+    const cars = [];
+    //  Declaration
+    cars[0] = "Maruti Suzuki";
+    cars[1] = "Hyundai";
+    cars[2] = "Honda";
+
+    //  using New Keyword
+    const bike = new Array("Classic 350", "Bullet", "Electra", "Thunderbird", "Himalyan");
+    //  Acessing the full Array by using their name
+    // console.log(cars); 
+
+    //  toString() it converts array in string separated by commas
+    // console.log(bike.toString());
+    cars.push("Toyota");
+
+    console.log(cars);
+
+    for (const bikes of bike) {
+        console.log(bikes);
+    }
+
+
+    function toUpper(string) {
+        return string.toUpperCase();
+    }
+
+    const cats = ["Leopard", "Serval", "Jaguar", "Tiger", "Caracal", "Lion"];
+
+    const upperCats = cats.map(toUpper);
+
+    console.log(upperCats);
+
+    function lCat(cat) {
+        return cat.startsWith("L");
+    }
+
+    const filtered = cats.filter(lCat);
+    console.log(filtered);
+
+
+    outer: for (let i = 0; i < 3; i++) {
+
+        for (let j = 0; j < 3; j++) {
+
+            let input = prompt(`Value at coords (${i},${j})`, '');
+
+            // if an empty string or canceled, then break out of both loops
+            if (!input) break outer; // (*)
+
+            // do something with the value...
+        }
+    }
+
+    alert('Done!');
+
+
+    //  Repeat until the input is correct
+
+    let i=prompt("enter the no");
+    while(i<=100){
+        if(i == null || i<=100){
+            i = prompt("enter the no");
+        }
+    }
+
+</Script>
+
+</html>
